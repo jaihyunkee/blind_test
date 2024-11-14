@@ -67,7 +67,17 @@ public class BoardController {
         BoardDTO dto = boardService.findById(boardDTO.getId());
         model.addAttribute("board", dto);
         return "detail";
+    }
 
+    // /board/paging?page=2 이런식으로
+
+    @GetMapping("/paging")
+    public String paging(Model model,
+                         @RequestParam(value = "page", required = false, defaultValue = "1") int page) {
+        // 해당 페이지에서 보여줄 글 목록
+        List<BoardDTO> pagingList = boardService.pagingList(page);
+        System.out.println(pagingList);
+        return "index";
     }
 
 }
