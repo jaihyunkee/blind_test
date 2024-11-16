@@ -18,7 +18,7 @@
             <tr>
                 <td>${board.id}</td>
                 <td>
-                    <a href="/board/${board.id}&page=${paging.page}">${board.boardTitle}</a>
+                    <a href="/board/${board.id}">${board.boardTitle}</a>
                 </td>
                 <td>${board.boardWriter}</td>
                 <td>${board.boardCreatedTime}</td>
